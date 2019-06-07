@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#define gets(a) fgets(a,sizeof(a),stdin);  a[strcspn(a, "\n")] = '\0';
+#define TAM 500
+int main() {
+   char cesar[TAM];int d;
+   printf("Digite vossa messagem: ");
+   gets(cesar);
+   printf("Criptografia valor:");
+   scanf("%d",&d);
+   int x=strlen(cesar);
+   for(int i=0;i<x;i++){
+     cesar[i]=cesar[i]+d;
+   }
+   puts(cesar);
+   for(int i=0;i<x;i++){
+     cesar[i]=cesar[i]-d;
+   }
+   puts(cesar);
+  return 0;
+}
